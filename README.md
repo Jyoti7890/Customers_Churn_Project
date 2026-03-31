@@ -6,7 +6,7 @@ An interactive project that combines **Exploratory Data Analysis (EDA)**, **Powe
 
 **Demo & Deployment Links:**
 
-* Streamlit App: Streamlit App: [Click here to run the app](https://customerchurnproject-cgscam4j3wpmjmvn7gb4n2.streamlit.app/)
+* Streamlit App: Streamlit App: [Click here to run the app](https://customerschurnproject-xxsz8nepmsdappw6uxf23cg.streamlit.app/)
 
 # Table of Contents
 
