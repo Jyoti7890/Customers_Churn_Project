@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-main: #0b1a12;
+    --bg-sidebar: #0f1a0f;
+    --bg-card: rgba(15, 23, 15, 0.92);
+    --bg-input: rgba(15, 23, 15, 0.95);
+    --text-primary: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --text-muted: #cbd5e1;
+    --border: #334155;
+    --border-strong: #64748b;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --shadow: 0 12px 28px rgba(2, 23, 6, 0.55);
+}
+
+/* Hide accidental empty containers */
+div:empty,
+[data-testid="stMarkdown"]:empty,
+[data-testid="stMetric"]:empty,
+[data-testid="stVerticalBlock"]:empty,
+[data-testid="stHorizontalBlock"]:empty {
+    display: none !important;
+}
+
+.stApp {
+    background: radial-gradient(circle at top left, #111a11 0%, var(--bg-main) 60%);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.main .block-container {
+    max-width: 1300px;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+/* Global text readability */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px;
+}
+
+h1 { font-size: 2.3rem !important; }
+h2 { font-size: 1.7rem !important; }
+h3 { font-size: 1.3rem !important; }
+
+p,
+li,
+span,
+label,
+[data-testid="stMarkdownContainer"],
+[data-testid="stText"],
+[data-testid="stMetricLabel"],
+[data-testid="stMetricValue"] {
+    color: var(--text-primary) !important;
+}
+
+.stCaption,
+[data-testid="stCaptionContainer"] {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem !important;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0b1312 0%, var(--bg-sidebar) 100%);
+    border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] * {
+    color: var(--text-primary) !important;
+}
+
+/* Cards */
+.glass-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+.hr-glow {
+    width: 100%;
+    height: 2px;
+    margin: 1.4rem 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(148, 163, 184, 0.75) 50%,
+        transparent 100%
+    );
+}
+
+/* Metrics */
+div[data-testid="stMetric"] {
+    background: var(--bg-card) !important;
+    border: 1px solid rgba(148, 163, 184, 0.35) !important;
+    border-radius: 14px !important;
+    padding: 1rem !important;
+    box-shadow: var(--shadow);
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+}
+
+[data-testid="stMetricValue"] {
+    font-size: 1.9rem !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+}
+
+/* Input labels */
+.stSelectbox label,
+.stMultiSelect label,
+.stNumberInput label,
+.stTextInput label,
+.stTextArea label,
+.stSlider label,
+.stRadio label,
+.stCheckbox label,
+.stDateInput label,
+.stTimeInput label,
+.stMarkdown label {
+    color: var(--text-primary) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+/* Select and multiselect */
+div[data-baseweb="select"] > div {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border-strong) !important;
+    border-radius: 10px !important;
+    min-height: 44px;
+}
+
+div[data-baseweb="select"] * {
+    color: var(--text-primary) !important;
+}
+
+/* Dropdown options in select and multiselect should be dark for readability */
+/* BaseWeb renders menu options in a portal, so target listbox/menu globally */
+div[role="listbox"],
+ul[role="listbox"],
+[data-baseweb="menu"] {
+    background-color: #f8fafc !important;
+}
+
+div[role="listbox"] *,
+ul[role="listbox"] *,
+[data-baseweb="menu"] *,
+div[role="option"] * {
+    color: #000000 !important;
+}
+
+div[role="option"],
+li[role="option"] {
+    color: #000000 !important;
+    background-color: #f8fafc !important;
+}
+
+/* Option hover/selected state */
+div[role="option"][aria-selected="true"],
+li[role="option"][aria-selected="true"] {
+    color: #000000 !important;
+    background-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Disabled states */
+div[role="option"][aria-disabled="true"],
+li[role="option"][aria-disabled="true"] {
+    color: #64748b !important;
+}
+
+/* Also ensure the internal input text is black when typing in dropdowns */
+div[data-baseweb="select"] input,
+[data-testid="stSelectbox"] input,
+[data-testid="stMultiSelect"] input,
+div[data-baseweb="select"] input[role="textbox"] {
+    color: #0b1220 !important;
+}
+
+/* Text and number inputs */
+div[data-baseweb="input"] > div {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border-strong) !important;
+    border-radius: 10px !important;
+}
+
+div[data-baseweb="input"] input {
+    color: var(--text-primary) !important;
+    font-size: 1rem !important;
+}
+
+/* Slider readability */
+div[data-baseweb="slider"] * {
+    color: var(--text-primary) !important;
+    font-size: 0.95rem !important;
+}
+
+div[data-baseweb="slider"] [role="slider"] {
+    background: var(--text-primary) !important;
+    border: 2px solid #1e293b !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+div[data-baseweb="slider"] > div > div {
+    background-color: rgba(148, 163, 184, 0.35) !important;
+}
+
+div[data-baseweb="slider"] > div > div > div {
+    background-color: var(--accent) !important;
+}
+
+/* Buttons and form submit */
+.stButton > button,
+.stFormSubmitButton > button {
+    background: linear-gradient(135deg, var(--accent), #1d4ed8) !important;
+    color: #ffffff !important;
+    border: 1px solid #60a5fa !important;
+    border-radius: 10px !important;
+    min-height: 44px;
+    padding: 0.55rem 1.3rem !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45);
+}
+
+.stButton > button:hover,
+.stFormSubmitButton > button:hover {
+    background: linear-gradient(135deg, #60a5fa, var(--accent-hover)) !important;
+    transform: translateY(-1px);
+}
+
+.stButton > button:focus,
+.stFormSubmitButton > button:focus {
+    outline: 2px solid #bfdbfe !important;
+    outline-offset: 2px !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab"] {
+    color: var(--text-secondary) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--text-primary) !important;
+    border-bottom: 3px solid var(--accent) !important;
+}
+
+/* Dataframe and table readability */
+[data-testid="stTable"],
+[data-testid="stDataFrame"] {
+    color: var(--text-primary) !important;
+}
+
+/* Plotly fallback text contrast */
+.js-plotly-plot .plotly text {
+    fill: var(--text-primary) !important;
+}
+
+/* Header */
+header {
+    background: rgba(11, 18, 32, 0.75) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    backdrop-filter: blur(8px);
+}
+
+footer {
+    color: var(--text-muted) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b1220;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#64748b, #94a3b8);
+    border-radius: 8px;
+}
